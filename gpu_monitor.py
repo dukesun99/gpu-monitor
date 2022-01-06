@@ -48,7 +48,7 @@ parser.add_argument('servers', nargs='*', default=[],
                     help='Servers to probe')
 
 # SSH command
-SSH_CMD = ('ssh -o "ConnectTimeout={ssh_timeout}" {server} '
+SSH_CMD = ('ssh -oBatchMode=yes -q -o "ConnectTimeout={ssh_timeout}" {server} '
            'timeout {cmd_timeout}')
 
 # Command for running nvidia-smi locally
